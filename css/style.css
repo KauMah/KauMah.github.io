@@ -16,6 +16,10 @@ html {
     height: 100%;
 }
 
+.centered {
+    text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -311,7 +315,7 @@ hr {
 	width:100%;
 	position:relative;
 	
-	background: url(../img/bg2.jpg) no-repeat top center;
+	background: url(../img/bg2.jpg) repeat top center;
 }
 
 #intro.intro {
@@ -937,6 +941,7 @@ Parallax
 
 	ul.featured-icons {
 		cursor: default;
+		margin: -0.75em 0 0 0;
 		opacity: 0.35;
 		overflow: hidden;
 		position: relative;
