@@ -491,6 +491,14 @@ form#contact-form input:focus,form#contact-form select:focus,form#contact-form t
 	padding:0;
 }
 
+.white {
+    background-color: #fff;
+}
+
+.grey {
+    background-color: #eee
+}
+
 
 .company-social a{
 	margin:0;
@@ -766,7 +774,7 @@ Parallax
 @media (max-width:768px) {
 	
 	.team.boxed-grey {
-		margin-bottom: 30px;
+		margin-bottom: 10px;
 	}
 	
 	.boxed-grey {
@@ -800,6 +808,12 @@ Parallax
 		font-size: 20px;
 	}
 	
+}
+/* Projects */
+.img-responsive-proj {
+  display: block;
+  max-width: 45%;
+  height: auto;
 }
 /* Icon */
 
