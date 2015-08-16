@@ -11,6 +11,7 @@ body {
     background-color: #fff;
 }
 
+
 html {
     width: 100%;
     height: 100%;
@@ -1001,3 +1002,5 @@ Parallax
 			ul.buttons.vertical li:first-child {
 				padding: 0;
 			}
+
+
