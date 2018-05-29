@@ -316,7 +316,8 @@ hr {
 	width:100%;
 	position:relative;
 	
-	background: url(../img/bg2.jpg) repeat top center;
+	background: url(../img/bg2.jpg) no-repeat top center;
+    background-size: cover
 }
 
 #intro.intro {
@@ -325,7 +326,7 @@ hr {
 
 .intro .slogan {
 	text-align: center;
-
+    
 }
 
 .intro .page-scroll {
@@ -1002,5 +1003,7 @@ Parallax
 			ul.buttons.vertical li:first-child {
 				padding: 0;
 			}
+
+
 
 
