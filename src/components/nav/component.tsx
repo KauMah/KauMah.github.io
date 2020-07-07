@@ -1,51 +1,85 @@
+import {
+  $black,
+  $navButtonActive,
+  $primary,
+  $white,
+} from '../../assets/colors';
+
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Radium from 'radium';
 import React from 'react';
+import _ from 'lodash';
 
 const styles = {
-  navButton: {
-    backgroundColor: '#000',
+  bar: {
+    backgroundColor: 'rgba(255, 255, 255, 0.5',
+  },
+  brand: {
+    color: $black,
     textDecoration: 'none',
-    borderRadius: '3px',
+    transition: 'color 0.3s',
     ':hover': {
-      backgroundColor: '#0F0',
+      textDecoration: 'none',
+      color: '$white',
+    },
+  },
+  link: {
+    textDecoration: 'none',
+  },
+  navButton: {
+    backgroundColor: $primary,
+    color: $black,
+    textDecoration: 'none',
+    transition: 'background-color 0.3s, color .3s',
+    ':hover': {
+      backgroundColor: $navButtonActive,
+      color: $white,
     },
   },
 };
+interface buttonTemp {
+  name: string;
+  href: string;
+}
+
+const navButtons: Array<buttonTemp> = [
+  {
+    name: 'Home',
+    href: '#home',
+  },
+  {
+    name: 'About',
+    href: '#about',
+  },
+  {
+    name: 'Contact',
+    href: '#contact',
+  },
+];
 
 const CustomNav = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" style={styles.bar}>
       <Navbar.Brand>
-        <a href={'/#'}>
-          <h1>Kaushik Mahadevan</h1>
+        <a href={'/#'} style={styles.link}>
+          <h3 style={styles.brand}>KAUSHIK MAHADEVAN</h3>
         </a>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="d-flex ml-auto">
-          <a
-            style={styles.navButton}
-            className="p-2"
-            href="#home"
-            key="navButton1">
-            Home
-          </a>
-          <a
-            style={styles.navButton}
-            className="p-2"
-            href="#about"
-            key="navButton2">
-            About
-          </a>
-          <a
-            style={styles.navButton}
-            className="p-2"
-            href="#contact"
-            key="navButton3">
-            Contact
-          </a>
+          {_.map(navButtons, (button: buttonTemp, index: number) => {
+            return (
+              <a
+                style={styles.navButton}
+                className="p-2"
+                href={button.href}
+                key={`navButton${index}`}>
+                {button.name.toUpperCase()}
+              </a>
+            );
+          })}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
