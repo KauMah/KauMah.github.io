@@ -1,6 +1,6 @@
 import CustomNav from './components/nav/index';
 import HashLinkObserver from 'react-hash-link';
-import Radium from 'radium';
+import IntroSection from './components/landing/index';
 import React from 'react';
 
 function App() {
@@ -8,8 +8,9 @@ function App() {
     <div className="App">
       <HashLinkObserver />
       <CustomNav />
+      <IntroSection />
     </div>
   );
 }
 
-export default Radium(App);
+export default App;
