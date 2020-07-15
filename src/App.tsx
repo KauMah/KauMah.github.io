@@ -1,3 +1,4 @@
+import About from './components/about/index';
 import CustomNav from './components/nav/index';
 import HashLinkObserver from 'react-hash-link';
 import IntroSection from './components/landing/index';
@@ -9,6 +10,7 @@ function App() {
       <HashLinkObserver />
       <CustomNav />
       <IntroSection />
+      <About />
     </div>
   );
 }
