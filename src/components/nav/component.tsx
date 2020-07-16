@@ -5,6 +5,7 @@ import {
     $white,
 } from '../../assets/colors';
 
+import { Link } from 'react-scroll';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Radium from 'radium';
@@ -57,15 +58,19 @@ interface buttonTemp {
 const navButtons: Array<buttonTemp> = [
     {
         name: 'Home',
-        href: '#landing',
+        href: 'landing',
     },
     {
         name: 'About',
-        href: '#about',
+        href: 'about',
+    },
+    {
+        name: 'Projects',
+        href: 'projects',
     },
     {
         name: 'Contact',
-        href: '#contact',
+        href: 'contact',
     },
 ];
 
@@ -89,13 +94,18 @@ const CustomNav = () => {
                 <Nav className="d-flex ml-auto mr-4" style={styles.navBox}>
                     {_.map(navButtons, (button: buttonTemp, index: number) => {
                         return (
-                            <a
+                            <Link
+                                spy
+                                isDynamic
+                                smooth="easeInOutCubic"
+                                duration={750}
                                 style={styles.navButton}
                                 className="p-2 justify-content-start"
-                                href={button.href}
+                                to={button.href}
+                                href=""
                                 key={`navButton${index}`}>
                                 {button.name.toUpperCase()}
-                            </a>
+                            </Link>
                         );
                     })}
                 </Nav>
