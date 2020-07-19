@@ -1,15 +1,11 @@
-import {
-    Events,
-    animateScroll as scroll,
-    scrollSpy,
-    scroller,
-} from 'react-scroll';
+import { Events, scrollSpy } from 'react-scroll';
 import React, { Component } from 'react';
 
-import About from './components/about/index';
-import CustomNav from './components/nav/index';
+import About from './components/about/';
+import Contact from './components/contact/';
+import CustomNav from './components/nav/';
 import HashLinkObserver from 'react-hash-link';
-import IntroSection from './components/landing/index';
+import IntroSection from './components/landing/';
 
 interface Props {}
 class App extends Component {
@@ -35,6 +31,7 @@ class App extends Component {
                 <CustomNav />
                 <IntroSection />
                 <About />
+                <Contact />
             </div>
         );
     }
