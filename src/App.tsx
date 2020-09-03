@@ -6,6 +6,7 @@ import Contact from './components/contact/';
 import CustomNav from './components/nav/';
 import HashLinkObserver from 'react-hash-link';
 import IntroSection from './components/landing/';
+import Projects from './components/projects';
 
 interface Props {}
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
                 <CustomNav />
                 <IntroSection />
                 <About />
+                {/* <Projects /> */}
                 <Contact />
             </div>
         );

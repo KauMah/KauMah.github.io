@@ -5,11 +5,11 @@ import {
     $white,
 } from '../../assets/colors';
 
-import { Link } from 'react-scroll';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Radium from 'radium';
 import React from 'react';
+import { ScrollLink } from 'react-scroll';
 import _ from 'lodash';
 
 const styles = {
@@ -74,6 +74,12 @@ const navButtons: Array<buttonTemp> = [
     },
 ];
 
+const Link = (props: any) => {
+    return <a {...props}>{props.children}</a>;
+};
+
+const CustomLink = ScrollLink(Radium(Link));
+
 const CustomNav = () => {
     return (
         <Navbar
@@ -94,7 +100,7 @@ const CustomNav = () => {
                 <Nav className="d-flex ml-auto mr-4" style={styles.navBox}>
                     {_.map(navButtons, (button: buttonTemp, index: number) => {
                         return (
-                            <Link
+                            <CustomLink
                                 spy
                                 isDynamic
                                 smooth="easeInOutCubic"
@@ -105,7 +111,7 @@ const CustomNav = () => {
                                 href=""
                                 key={`navButton${index}`}>
                                 {button.name.toUpperCase()}
-                            </Link>
+                            </CustomLink>
                         );
                     })}
                 </Nav>
