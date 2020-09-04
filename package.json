@@ -28,6 +28,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "reboot": "rm -rf node_modules; yarn install",
+        "clean-build": "rm -rf build",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d build"
     },

@@ -33,16 +33,18 @@ const Projects = () => {
                 <h3 style={styles.header}>PROJECTS</h3>
                 <hr />
             </div>
-            <div className="container-fluid row">
-                {proj.map((project: Project, index) => (
-                    <Tile
-                        key={`project${index}`}
-                        title={project.title}
-                        body={project.body}
-                        url={project.url}
-                        imageUrl={project.imageUrl}
-                    />
-                ))}
+            <div className="container-fluid">
+                <div className="row">
+                    {proj.map((project: Project, index) => (
+                        <Tile
+                            key={`project${index}`}
+                            title={project.title}
+                            body={project.body}
+                            url={project.url}
+                            imageUrl={project.imageUrl}
+                        />
+                    ))}
+                </div>
             </div>
         </section>
     );

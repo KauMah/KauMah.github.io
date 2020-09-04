@@ -55,7 +55,7 @@ const styles = {
 const Contact = () => {
     return (
         <section id="contact">
-            <div style={styles.container}>
+            <div style={styles.container} className="container">
                 <h3>GET IN TOUCH!</h3>
                 <hr />
                 <div className="row" style={styles.spacer}>
