@@ -9,7 +9,8 @@
         "title": "Youtube Uploader Clone",
         "body": "This is a barebones YouTube Uploading client that I made in order to get familiar with implementing OAuth2 along with Google sign in. It allows a user to create, view, update, and delete basic attributes of a video.",
         "url": "https://github.com/KauMah/yt-upload",
-        "imageUrl": "https://imgur.com/ENOQ8Pf.png"
+        "imageUrl": "https://imgur.com/ENOQ8Pf.png",
+        "liveUrl": "http://yt-upload.netlify.app"
     },
     {
         "title": "Tier-List App",

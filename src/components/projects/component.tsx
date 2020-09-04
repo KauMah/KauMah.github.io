@@ -1,3 +1,4 @@
+import { $secondary } from '../../assets/colors';
 import React from 'react';
 import Tile from './tile';
 import projectEntries from '../../assets/projectInfo.json';
@@ -9,7 +10,7 @@ const styles = {
         textAlign: 'center' as 'center',
     },
     darker: {
-        backgroundColor: '#f0f0f0',
+        backgroundColor: $secondary,
     },
     header: {
         paddingTop: '20px',
@@ -21,12 +22,12 @@ export interface Project {
     body: string;
     url: string;
     imageUrl: string;
+    liveUrl?: string;
 }
 
 const proj = projectEntries;
 
 const Projects = () => {
-    console.log(projectEntries);
     return (
         <section id="projects" style={styles.darker}>
             <div style={styles.container} className="container">
@@ -42,6 +43,7 @@ const Projects = () => {
                             body={project.body}
                             url={project.url}
                             imageUrl={project.imageUrl}
+                            liveUrl={project.liveUrl}
                         />
                     ))}
                 </div>
