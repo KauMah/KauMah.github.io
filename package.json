@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "Kaushik",
     "homepage": "http://kaumah.github.io",
     "version": "0.1.0",
@@ -58,4 +59,60 @@
             "last 1 safari version"
         ]
     }
+=======
+  "name": "Kaushik",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "1.2.30",
+    "@fortawesome/free-brands-svg-icons": "5.14.0",
+    "@fortawesome/free-solid-svg-icons": "5.14.0",
+    "@fortawesome/react-fontawesome": "0.1.11",
+    "@material-ui/core": "4.10.2",
+    "@material-ui/styles": "4.10.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/lodash": "4.14.157",
+    "@types/node": "^12.0.0",
+    "@types/radium": "0.24.2",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-scroll": "1.5.5",
+    "bootstrap": "4.5.0",
+    "gh-pages": "3.1.0",
+    "lodash": "4.17.19",
+    "radium": "0.26.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "1.0.1",
+    "react-dom": "^16.13.1",
+    "react-hash-link": "1.0.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "3.4.1",
+    "react-scroll": "1.8.0",
+    "typescript": "~3.7.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+>>>>>>> 5ee2480e5fc5e4d46892ba7e4310dc1b638647b9
 }
