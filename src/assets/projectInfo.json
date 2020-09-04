@@ -1,0 +1,20 @@
+[
+    {
+        "title": "kaumah.github.io",
+        "body": "You are already here! This is my personal website, which has recently been converted entirely to react, and is based on create-react-app. It is meant not only to showcase what I have been working on, but also to experiment with React and other packages.",
+        "url": "https://github.com/KauMah/KauMah.github.io",
+        "imageUrl": "https://imgur.com/QnqUMpc.png"
+    },
+    {
+        "title": "Youtube Uploader Clone",
+        "body": "This is a barebones YouTube Uploading client that I made in order to get familiar with implementing OAuth2 along with Google sign in. It allows a user to create, view, update, and delete basic attributes of a video.",
+        "url": "https://github.com/KauMah/yt-upload",
+        "imageUrl": "https://imgur.com/ENOQ8Pf.png"
+    },
+    {
+        "title": "Tier-List App",
+        "body": "In Progress - Coming Soon...",
+        "url": "https://github.com/KauMah/tier-list",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/53c51f61e4b02bb571b7ca82/1424996778828-01E8ZFH2CCALDD0MNXX6/ke17ZwdGBToddI8pDm48kP06O0_IHyRXSOOiqwgWaApZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEsL0EX72Q6S7TgfQYQBQpkz5xM6Qt8VXd_xJGg_ziCFib8BodarTVrzIWCp72ioWw/Coming-Soon-grey-square.png"
+    }
+]

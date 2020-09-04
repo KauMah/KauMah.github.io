@@ -1,3 +1,4 @@
+import { Project } from './component';
 import React from 'react';
 
 const styles = {
@@ -19,14 +20,7 @@ const styles = {
     },
 };
 
-interface Props {
-    title: string;
-    body: string;
-    url: string;
-    imageUrl?: string;
-}
-
-export default function Tile({ title, body, url, imageUrl }: Props) {
+export default function Tile({ title, body, url, imageUrl }: Project) {
     return (
         <div className="col-12 col-lg-6">
             <div style={styles.container} className="row">
@@ -34,15 +28,7 @@ export default function Tile({ title, body, url, imageUrl }: Props) {
                     <a href={url}>
                         <h4>{title}</h4>
                     </a>
-                    <img
-                        src={
-                            imageUrl
-                                ? imageUrl
-                                : 'https://i.imgur.com/DkdUods.jpg'
-                        }
-                        alt="poo"
-                        style={styles.image}
-                    />
+                    <img src={imageUrl} alt="poo" style={styles.image} />
                 </div>
                 <div style={styles.infoPane} className="col-12 col-lg-6">
                     <p style={styles.betterText}>{body}</p>
