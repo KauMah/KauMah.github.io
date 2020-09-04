@@ -15,9 +15,9 @@ import _ from 'lodash';
 const styles = {
     bar: {
         background:
-            'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 25%, rgba(255,255,255,.3) 100%)',
-        backdropFilter: 'blur(3px)',
-        WebkitBackdropFilter: 'blur(3px)',
+            'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 15%, rgba(255,255,255,.3) 100%)',
+        backdropFilter: 'blur(2px)',
+        WebkitBackdropFilter: 'blur(2px)',
         height: '72px',
         position: 'fixed' as 'fixed',
     },
@@ -41,6 +41,7 @@ const styles = {
         backgroundColor: $primary,
         color: $black,
         textDecoration: 'none',
+        cursor: 'pointer',
         transition: 'background-color 0.3s, color .3s',
         border: '1px solid rgba(0,0,0,0)',
         ':hover': {
@@ -105,10 +106,11 @@ const CustomNav = () => {
                                 isDynamic
                                 smooth="easeInOutCubic"
                                 duration={750}
+                                activeClass="active"
+                                offset={-72}
                                 style={styles.navButton}
                                 className="p-2 justify-content-start"
                                 to={button.href}
-                                href=""
                                 key={`navButton${index}`}>
                                 {button.name.toUpperCase()}
                             </CustomLink>

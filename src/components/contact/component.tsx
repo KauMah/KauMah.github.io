@@ -18,12 +18,12 @@ const styles = {
         textAlign: 'center' as 'center',
     },
     spacer: {
-        margin: '0 20%',
         justifyContent: 'center',
     },
     icon: {
         color: $black,
         transition: 'color 0.3s',
+        margin: '0 5px',
     },
     github: {
         ':hover': {
@@ -55,34 +55,34 @@ const styles = {
 const Contact = () => {
     return (
         <section id="contact">
-            <div className="container" style={styles.container}>
+            <div style={styles.container}>
                 <h3>GET IN TOUCH!</h3>
                 <hr />
                 <div className="row" style={styles.spacer}>
                     <a
                         title="Github"
-                        href=" "
+                        href="https://github.com/KauMah"
                         style={{ ...styles.icon, ...styles.github }}
                         key="github-button">
                         <FontAwesomeIcon icon={faGithub} size="5x" />
                     </a>
                     <a
                         title="Linkedin"
-                        href=" "
+                        href="https://www.linkedin.com/in/kaushikmahadevan/"
                         style={{ ...styles.icon, ...styles.linkedin }}
                         key="linkedin-button">
                         <FontAwesomeIcon icon={faLinkedin} size="5x" />
                     </a>
                     <a
                         title="Youtube"
-                        href=" "
+                        href="https://www.youtube.com/channel/UCZEyX114PjTP_r4Cku1oJaQ"
                         style={{ ...styles.icon, ...styles.youtube }}
                         key="youtube-button">
                         <FontAwesomeIcon icon={faYoutube} size="5x" />
                     </a>
                     <a
                         title="Instagram"
-                        href=" "
+                        href="https://www.instagram.com/kaushik_m_/"
                         style={{
                             ...styles.icon,
                             ...styles.instagram,
@@ -92,7 +92,7 @@ const Contact = () => {
                     </a>
                     <a
                         title="Twitter"
-                        href=" "
+                        href="https://twitter.com/couch_chick"
                         style={{ ...styles.icon, ...styles.twitter }}
                         key="twitter-button">
                         <FontAwesomeIcon icon={faTwitter} size="5x" />

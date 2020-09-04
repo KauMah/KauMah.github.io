@@ -32,7 +32,7 @@ class App extends Component {
                 <CustomNav />
                 <IntroSection />
                 <About />
-                {/* <Projects /> */}
+                <Projects />
                 <Contact />
             </div>
         );
