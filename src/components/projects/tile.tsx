@@ -56,7 +56,7 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
         <div className="col-12 col-lg-6">
             <div style={styles.container} className="row">
                 <div style={styles.iconPane} className="col-12 col-lg-6">
-                    <a key={title} href={url} style={styles.mainLink}>
+                    <a href={url} style={styles.mainLink}>
                         <div>
                             <h4 style={styles.linkText}>{title}</h4>
                         </div>
@@ -71,7 +71,7 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
                             <p>
                                 See me in action{' '}
                                 <a
-                                    key={liveUrl}
+                                    key={`link-${url}`}
                                     href={liveUrl}
                                     style={{
                                         ...styles.link,
