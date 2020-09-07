@@ -19,7 +19,7 @@ const styles = {
         backdropFilter: 'blur(2px)',
         WebkitBackdropFilter: 'blur(2px)',
         // height: '72px',
-        padding: '10px 5px',
+        padding: '12px 5px',
         position: 'fixed' as 'fixed',
     },
     brand: {
