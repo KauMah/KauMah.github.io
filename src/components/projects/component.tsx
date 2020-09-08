@@ -5,8 +5,8 @@ import projectEntries from '../../assets/projectInfo.json';
 
 const styles = {
     container: {
-        marginTop: '50px',
-        marginBottom: '50px',
+        paddingTop: '50px',
+        paddingBottom: '50px',
         textAlign: 'center' as 'center',
     },
     darker: {

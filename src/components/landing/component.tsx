@@ -12,6 +12,7 @@ const styles = {
     },
     mainText: {
         color: $white,
+        fontSize: 'calc(1em + 3.5vw)',
     },
 };
 

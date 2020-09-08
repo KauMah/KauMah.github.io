@@ -79,6 +79,10 @@ const navButtons: Array<buttonTemp> = [
         href: 'about',
     },
     {
+        name: 'Skills',
+        href: 'skills',
+    },
+    {
         name: 'Projects',
         href: 'projects',
     },

@@ -6,6 +6,7 @@ import Contact from './components/contact/';
 import CustomNav from './components/nav/';
 import IntroSection from './components/landing/';
 import Projects from './components/projects';
+import Skills from './components/skills';
 
 class App extends Component {
     componentDidMount() {
@@ -29,6 +30,7 @@ class App extends Component {
                 <CustomNav />
                 <IntroSection />
                 <About />
+                <Skills />
                 <Projects />
                 <Contact />
             </div>
