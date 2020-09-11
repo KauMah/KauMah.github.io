@@ -61,7 +61,11 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
                             <h4 style={styles.linkText}>{title}</h4>
                         </div>
                     </a>
-                    <img src={imageUrl} alt="poo" style={styles.image} />
+                    <img
+                        src={imageUrl}
+                        alt="Image failed to load!"
+                        style={styles.image}
+                    />
                 </div>
                 <div style={styles.infoPane} className="col-12 col-lg-6">
                     <p style={styles.betterText}>{body}</p>
