@@ -4,13 +4,13 @@ import {
     $primary,
     $white,
 } from '../../assets/colors';
-import React, { useState } from 'react';
 
+import { css } from '@emotion/react';
+import _ from 'lodash';
+import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Radium from 'radium';
 import { ScrollLink } from 'react-scroll';
-import _ from 'lodash';
 
 const styles = {
     bar: {
@@ -22,16 +22,16 @@ const styles = {
         padding: '12px 5px',
         position: 'fixed' as 'fixed',
     },
-    brand: {
+    brand: css({
         color: $black,
         textDecoration: 'none',
         transition: 'color 0.3s',
         marginTop: '-5px',
-        ':hover': {
+        '&:hover': {
             textDecoration: 'none',
             color: $white,
         },
-    },
+    }),
     navBox: {
         marginTop: '-5px',
         textAlign: 'right' as 'right',
@@ -43,19 +43,19 @@ const styles = {
     link: {
         textDecoration: 'none',
     },
-    navButton: {
+    navButton: css({
         backgroundColor: $primary,
         color: $black,
         textDecoration: 'none',
         cursor: 'pointer',
         transition: 'background-color 0.3s, color .3s',
         border: '1px solid rgba(0,0,0,0)',
-        ':hover': {
+        '&:hover': {
             backgroundColor: $navButtonActive,
             border: '1px solid rgba(50,50,50,0.3)',
             color: $white,
         },
-    },
+    }),
     buttonWrapper: {
         display: 'inline-block',
     },
@@ -96,7 +96,7 @@ const Link = (props: any) => {
     return <a {...props}>{props.children}</a>;
 };
 
-const CustomLink = ScrollLink(Radium(Link));
+const CustomLink = ScrollLink(Link);
 
 const CustomNav = () => {
     const [condensed, setCondensed] = useState(false);
@@ -113,7 +113,7 @@ const CustomNav = () => {
             style={styles.bar}>
             <Navbar.Brand>
                 <a href={'/#'} style={styles.link}>
-                    <h4 key="brand" style={styles.brand}>
+                    <h4 key="brand" css={styles.brand}>
                         KAUSHIK MAHADEVAN
                     </h4>
                 </a>
@@ -140,11 +140,11 @@ const CustomNav = () => {
                                 <CustomLink
                                     spy
                                     isDynamic
-                                    smooth="easeInOutCubic"
-                                    duration={750}
+                                    smooth="easeInOutQuart"
+                                    duration={100}
                                     activeClass="active"
                                     offset={-50}
-                                    style={styles.navButton}
+                                    css={styles.navButton}
                                     className="p-2 justify-content-start"
                                     to={button.href}>
                                     {button.name.toUpperCase()}
@@ -158,4 +158,4 @@ const CustomNav = () => {
     );
 };
 
-export default Radium(CustomNav);
+export default CustomNav;

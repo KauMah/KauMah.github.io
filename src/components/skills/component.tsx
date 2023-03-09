@@ -1,7 +1,7 @@
-import { $white } from '../../assets/colors';
 import { Parallax } from 'react-parallax';
+import { $white } from '../../assets/colors';
+import bg from '../../assets/img/bg.jpg';
 import Progress from './progress';
-import React from 'react';
 
 export interface ProgressProps {
     title: string;
@@ -57,7 +57,7 @@ const Skills = () => {
     return (
         <section id="skills" style={styles.sectionBg}>
             <Parallax
-                bgImage={require('../../assets/img/bg.jpg')}
+                bgImage={bg}
                 bgImageAlt={'whoops'}
                 strength={300}
                 blur={{ min: 0, max: 7 }}

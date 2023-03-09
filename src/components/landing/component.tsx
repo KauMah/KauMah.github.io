@@ -1,5 +1,4 @@
 import { $white } from '../../assets/colors';
-import React from 'react';
 
 const styles = {
     sect: {

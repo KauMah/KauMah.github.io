@@ -6,56 +6,55 @@ import {
     faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-import { $black } from '../../assets/colors';
+import { css } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Radium from 'radium';
-import React from 'react';
+import { $black } from '../../assets/colors';
 
 const styles = {
     container: {
         paddingTop: '50px',
-        paddingBottom: '50px',
+        paddingBottom: '150px',
         textAlign: 'center' as 'center',
         fontSize: '40px',
     },
     spacer: {
         justifyContent: 'center',
     },
-    icon: {
+    icon: css({
         color: $black,
         transition: 'color 0.3s, font-size 0.3s',
         margin: '0 5px',
-    },
-    github: {
-        ':hover': {
+    }),
+    github: css({
+        '&:hover': {
             color: 'rgb(41, 45, 50)',
-            fontSize: '70px',
+            fontSize: '60px',
         },
-    },
-    youtube: {
-        ':hover': {
+    }),
+    youtube: css({
+        '&:hover': {
             color: 'rgb(235, 51, 35)',
-            fontSize: '70px',
+            fontSize: '60px',
         },
-    },
-    instagram: {
-        ':hover': {
+    }),
+    instagram: css({
+        '&:hover': {
             color: '#d6249f',
-            fontSize: '70px',
+            fontSize: '60px',
         },
-    },
-    twitter: {
-        ':hover': {
+    }),
+    twitter: css({
+        '&:hover': {
             color: 'rgb(74, 160, 235)',
-            fontSize: '70px',
+            fontSize: '60px',
         },
-    },
-    linkedin: {
-        ':hover': {
+    }),
+    linkedin: css({
+        '&:hover': {
             color: 'rgb(48, 118, 176)',
-            fontSize: '70px',
+            fontSize: '60px',
         },
-    },
+    }),
 };
 
 const Contact = () => {
@@ -68,38 +67,40 @@ const Contact = () => {
                     <a
                         title="Github"
                         href="https://github.com/KauMah"
-                        style={{ ...styles.icon, ...styles.github }}
+                        css={[styles.icon, styles.github]}
+                        className="col-sm-1"
                         key="github-button">
                         <FontAwesomeIcon icon={faGithub} size="lg" />
                     </a>
                     <a
                         title="Linkedin"
                         href="https://www.linkedin.com/in/kaushikmahadevan/"
-                        style={{ ...styles.icon, ...styles.linkedin }}
+                        css={[styles.icon, styles.linkedin]}
+                        className="col-sm-1"
                         key="linkedin-button">
                         <FontAwesomeIcon icon={faLinkedin} size="lg" />
                     </a>
                     <a
                         title="Youtube"
                         href="https://www.youtube.com/channel/UCZEyX114PjTP_r4Cku1oJaQ"
-                        style={{ ...styles.icon, ...styles.youtube }}
+                        css={[styles.icon, styles.youtube]}
+                        className="col-sm-1"
                         key="youtube-button">
                         <FontAwesomeIcon icon={faYoutube} size="lg" />
                     </a>
                     <a
                         title="Instagram"
                         href="https://www.instagram.com/kaushik_m_/"
-                        style={{
-                            ...styles.icon,
-                            ...styles.instagram,
-                        }}
+                        css={[styles.icon, styles.instagram]}
+                        className="col-sm-1"
                         key="instagram-button">
                         <FontAwesomeIcon icon={faInstagram} size="lg" />
                     </a>
                     <a
                         title="Twitter"
                         href="https://twitter.com/couch_chick"
-                        style={{ ...styles.icon, ...styles.twitter }}
+                        css={[styles.icon, styles.twitter]}
+                        className="col-sm-1"
                         key="twitter-button">
                         <FontAwesomeIcon icon={faTwitter} size="lg" />
                     </a>
@@ -109,4 +110,4 @@ const Contact = () => {
     );
 };
 
-export default Radium(Contact);
+export default Contact;

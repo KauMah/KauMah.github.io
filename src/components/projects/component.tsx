@@ -1,7 +1,6 @@
 import { $secondary } from '../../assets/colors';
-import React from 'react';
-import Tile from './tile';
 import projectEntries from '../../assets/projectInfo.json';
+import Tile from './tile';
 
 const styles = {
     container: {
