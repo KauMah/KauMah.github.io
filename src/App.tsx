@@ -1,10 +1,10 @@
+import { Component } from 'react';
 import { Events, scrollSpy } from 'react-scroll';
-import React, { Component } from 'react';
 
 import About from './components/about/';
 import Contact from './components/contact/';
-import CustomNav from './components/nav/';
 import IntroSection from './components/landing/';
+import CustomNav from './components/nav/';
 import Projects from './components/projects';
 import Skills from './components/skills';
 

@@ -1,9 +1,10 @@
 {
-    "name": "Kaushik",
+    "name": "kaushik",
     "homepage": "http://kaumah.github.io",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@emotion/react": "11.10.6",
         "@fortawesome/fontawesome-svg-core": "1.2.30",
         "@fortawesome/free-brands-svg-icons": "5.14.0",
         "@fortawesome/free-solid-svg-icons": "5.14.0",
@@ -11,31 +12,22 @@
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
         "@testing-library/user-event": "^7.1.2",
-        "bootstrap": "4.5.2",
+        "bootstrap": "5.2.3",
         "gh-pages": "3.1.0",
-        "lodash": "4.17.19",
-        "radium": "0.26.0",
-        "react": "^16.13.1",
-        "react-bootstrap": "1.0.1",
-        "react-dom": "^16.13.1",
-        "react-parallax": "3.0.3",
-        "react-router-dom": "5.2.0",
-        "react-scripts": "3.4.1",
-        "react-scroll": "1.8.0",
-        "typescript": "~3.7.2"
+        "lodash": "4.17.21",
+        "react": "^18.2.0",
+        "react-bootstrap": "2.7.2",
+        "react-dom": "^18.2.0",
+        "react-parallax": "3.5.1",
+        "react-router-dom": "6.8.1",
+        "react-scroll": "1.8.9"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
+        "start": "vite",
+        "build": "tsc && vite build",
         "reboot": "rm -rf node_modules; yarn install",
         "clean-build": "rm -rf build",
-        "predeploy": "yarn build",
         "deploy": "gh-pages -d build"
-    },
-    "eslintConfig": {
-        "extends": "react-app"
     },
     "browserslist": {
         "production": [
@@ -50,12 +42,26 @@
         ]
     },
     "devDependencies": {
-        "@types/jest": "26.0.13",
+        "@emotion/babel-plugin": "11.10.6",
+        "@types/jest": "^29.4.0",
         "@types/lodash": "4.14.161",
-        "@types/node": "14.6.4",
-        "@types/radium": "0.24.2",
+        "@types/node": "^18.14.0",
         "@types/react": "16.9.49",
-        "@types/react-dom": "16.9.8",
-        "@types/react-scroll": "1.8.0"
+        "@types/react-dom": "18.0.11",
+        "@types/react-scroll": "1.8.0",
+        "@vitejs/plugin-react": "3.1.0",
+        "@vitejs/plugin-react-swc": "3.2.0",
+        "eslint-config-airbnb": "19.0.4",
+        "eslint-config-airbnb-typescript": "17.0.0",
+        "eslint-config-prettier": "8.7.0",
+        "eslint-config-react": "1.1.7",
+        "eslint-plugin-import": "2.27.5",
+        "eslint-plugin-jsx-a11y": "6.7.1",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-unused-imports": "2.0.0",
+        "typescript": "4.9.5",
+        "vite": "4.1.4",
+        "vite-plugin-svgr": "2.4.0",
+        "vite-tsconfig-paths": "4.0.5"
     }
 }

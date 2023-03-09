@@ -5,9 +5,8 @@ import {
     $white,
 } from '../../assets/colors';
 
+import { css } from '@emotion/react';
 import { Project } from './component';
-import Radium from 'radium';
-import React from 'react';
 
 const styles = {
     container: {
@@ -26,18 +25,18 @@ const styles = {
     betterText: {
         padding: '0 10%',
     },
-    link: {
+    link: css({
         textDecoration: 'none',
         color: $black,
         transition: 'color 0.3s',
         ':hover': {
             color: $linkHover,
         },
-    },
+    }),
     mainLink: {
         textDecoration: 'none',
     },
-    linkText: {
+    linkText: css({
         display: 'inline-block',
         padding: '2px 5px',
         borderRadius: '5px',
@@ -48,7 +47,7 @@ const styles = {
             color: $linkHover,
             background: $navButtonActive,
         },
-    },
+    }),
 };
 
 function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
@@ -58,7 +57,7 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
                 <div style={styles.iconPane} className="col-12 col-lg-6">
                     <a href={url} style={styles.mainLink}>
                         <div>
-                            <h4 style={styles.linkText}>{title}</h4>
+                            <h4 css={styles.linkText}>{title}</h4>
                         </div>
                     </a>
                     <img src={imageUrl} alt="" style={styles.image} />
@@ -73,7 +72,7 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
                                 <a
                                     key={`link-${url}`}
                                     href={liveUrl}
-                                    style={{
+                                    css={{
                                         ...styles.link,
                                         textDecoration: 'underline',
                                     }}>
@@ -88,4 +87,4 @@ function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
     );
 }
 
-export default Radium(Tile);
+export default Tile;
