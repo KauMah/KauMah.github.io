@@ -5,9 +5,14 @@ import {
   $secondary,
   $white,
 } from '../../assets/colors';
+import {
+  createMergeSortAnimations,
+  QuicksortAnimation,
+  quickSortAnimations,
+} from './sortingAlgos';
 
+import _ from 'lodash';
 import { useContainerDimensions } from '../../hooks/useResize';
-import { createMergeSortAnimations } from './sortingAlgos';
 
 const styles = {
   section: {
@@ -31,15 +36,22 @@ const styles = {
     width: '10px',
     margin: '0 1px 0 0',
   },
+  count: {
+    display: 'inline-block',
+  },
 };
 
 const Sort = () => {
-  const [array, setArray] = useState<number[]>();
-  const [arrSize, setArrSize] = useState<number>(100);
   const containerRef = useRef<HTMLHeadingElement>(null);
   const { width, height } = useContainerDimensions(containerRef);
+  const [array, setArray] = useState<number[]>();
+  const [arrSize, setArrSize] = useState<number>(50);
+  const [maxCols, setMaxCols] = useState<number>(100);
   const randomizeArray = () => {
     const arr = [];
+    // if (arrSize > width / 2) {
+    //   setArrSize(width / 4);
+    // }
     for (let i = 0; i < arrSize; i++) {
       arr.push(Math.min(Math.random() * arrSize));
     }
@@ -62,24 +74,60 @@ const Sort = () => {
         setTimeout(() => {
           b1Style.backgroundColor = color;
           b2Style.backgroundColor = color;
-        }, i * 10);
+        }, i * 1);
       } else {
         setTimeout(() => {
           const [bar1, val] = animations[i].idxArr;
           const b1Style = bars[bar1].style;
           b1Style.height = `${(val / arrSize) * height}px`;
-        }, i * 10);
+        }, i * 1);
       }
     }
   };
+  const quickSort = () => {
+    if (!array) return;
+    const animations: QuicksortAnimation[] = quickSortAnimations(
+      array,
+      0,
+      arrSize - 1
+    );
+    for (let i = 0; i < animations.length; i++) {
+      const bars = document.getElementsByClassName(
+        'sort-bar'
+      ) as HTMLCollectionOf<HTMLElement>;
+      const type = animations[i].type;
+      if (type != 'swap') {
+        const [bar1, bar2] = animations[i].indices;
+        const b1Style = bars[bar1].style;
+        const b2Style = bars[bar2].style;
+        const color = type === 'highlight' ? $highlight : $primarySolid;
+        setTimeout(() => {
+          b1Style.backgroundColor = color;
+          b2Style.backgroundColor = color;
+        }, i * 1);
+      } else {
+        setTimeout(() => {
+          const [bar1, bar2, v1, v2] = animations[i].indices;
+          const b1Style = bars[bar1].style;
+          b1Style.height = `${(v2 / arrSize) * height}px`;
+          const b2Style = bars[bar2].style;
+          b2Style.height = `${(v1 / arrSize) * height}px`;
+        }, i * 1);
+      }
+    }
+  };
+
+  const handleSlide = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setArrSize(parseInt(e.target.value));
+    _.throttle(() => randomizeArray(), 100)();
+  };
+
   useEffect(() => {
+    setMaxCols(width / 2);
     if (!array || array.length === 0) {
       randomizeArray();
     }
   }, [array]);
-  // useLayoutEffect(() => {
-  //   console.log(width);
-  // });
   return (
     <section id="sort" style={styles.section}>
       <h2 style={styles.title}>Sorting Visualizer</h2>
@@ -97,8 +145,15 @@ const Sort = () => {
               }}></div>
           ))}
       </div>
+      <input
+        type="range"
+        min={1}
+        max={maxCols}
+        value={arrSize}
+        onChange={handleSlide}></input>
       <button onClick={() => randomizeArray()}>Randomize Array</button>
       <button onClick={() => mergeSort()}>MergeSort</button>
+      <button onClick={() => quickSort()}>Quicksort</button>
     </section>
   );
 };

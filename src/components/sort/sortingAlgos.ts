@@ -64,3 +64,48 @@ const merge = (
     arr[k++] = aux[j++];
   }
 };
+
+export interface QuicksortAnimation {
+  type: 'swap' | 'highlight' | 'uncolor';
+  indices: number[];
+}
+
+export const quickSortAnimations = (arr: number[], p: number, r: number) => {
+  const animations: QuicksortAnimation[] = [];
+  quicksort(arr, p, r, animations);
+  return animations;
+};
+const partition = (
+  arr: number[],
+  p: number,
+  r: number,
+  animations: QuicksortAnimation[]
+): number => {
+  const x = arr[r];
+  let i = p - 1;
+  for (let j = p; j < r; j++) {
+    animations.push({ type: 'highlight', indices: [j, r] });
+    animations.push({ type: 'uncolor', indices: [j, r] });
+    if (arr[j] <= x) {
+      i++;
+      animations.push({ type: 'swap', indices: [i, j, arr[i], arr[j]] });
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+  animations.push({ type: 'swap', indices: [i + 1, r, arr[i + 1], arr[r]] });
+  [arr[i + 1], arr[r]] = [arr[r], arr[i + 1]];
+  return i + 1;
+};
+
+export const quicksort = (
+  arr: number[],
+  p: number,
+  r: number,
+  animations: QuicksortAnimation[]
+) => {
+  if (p < r) {
+    const q = partition(arr, p, r, animations);
+    quicksort(arr, p, q - 1, animations);
+    quicksort(arr, q + 1, r, animations);
+  }
+};
