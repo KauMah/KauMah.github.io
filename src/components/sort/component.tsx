@@ -48,6 +48,7 @@ const Sort = () => {
   const [maxCols, setMaxCols] = useState<number>(100);
   const animationTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const randomizeArray = () => {
+    cancelAnimation();
     const arr = [];
     // if (arrSize > width / 2) {
     //   setArrSize(width / 4);
@@ -145,6 +146,10 @@ const Sort = () => {
       randomizeArray();
     }
   }, [array]);
+  useEffect(() => {
+    setMaxCols(width / 2);
+    randomizeArray();
+  }, [arrSize]);
   return (
     <section id="sort" style={styles.section}>
       <h2 style={styles.title}>Sorting Visualizer</h2>
