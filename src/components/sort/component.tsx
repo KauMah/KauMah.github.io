@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import {
   $highlight,
   $primarySolid,
@@ -6,12 +5,12 @@ import {
   $white,
 } from '../../assets/colors';
 import {
-  createMergeSortAnimations,
   QuicksortAnimation,
+  createMergeSortAnimations,
   quickSortAnimations,
 } from './sortingAlgos';
+import { useEffect, useRef, useState } from 'react';
 
-import _ from 'lodash';
 import { useContainerDimensions } from '../../hooks/useResize';
 
 const styles = {
@@ -47,6 +46,7 @@ const Sort = () => {
   const [array, setArray] = useState<number[]>();
   const [arrSize, setArrSize] = useState<number>(50);
   const [maxCols, setMaxCols] = useState<number>(100);
+  const animationTimeouts = useRef<ReturnType<typeof setTimeout>[]>([]);
   const randomizeArray = () => {
     const arr = [];
     // if (arrSize > width / 2) {
@@ -57,6 +57,14 @@ const Sort = () => {
     }
     setArray(arr);
   };
+
+  const cancelAnimation = () => {
+    for (let i = 0; i < animationTimeouts.current.length; i++) {
+      clearTimeout(animationTimeouts.current[i]);
+    }
+    animationTimeouts.current = [];
+  };
+
   const mergeSort = () => {
     if (!array) return;
     const animations = createMergeSortAnimations(array);
@@ -71,16 +79,20 @@ const Sort = () => {
         const b1Style = bars[bar1].style;
         const b2Style = bars[bar2].style;
         const color = type === 'focus' ? $highlight : $primarySolid;
-        setTimeout(() => {
-          b1Style.backgroundColor = color;
-          b2Style.backgroundColor = color;
-        }, i * 1);
+        animationTimeouts.current.push(
+          setTimeout(() => {
+            b1Style.backgroundColor = color;
+            b2Style.backgroundColor = color;
+          }, i * 1)
+        );
       } else {
-        setTimeout(() => {
-          const [bar1, val] = animations[i].idxArr;
-          const b1Style = bars[bar1].style;
-          b1Style.height = `${(val / arrSize) * height}px`;
-        }, i * 1);
+        animationTimeouts.current.push(
+          setTimeout(() => {
+            const [bar1, val] = animations[i].idxArr;
+            const b1Style = bars[bar1].style;
+            b1Style.height = `${(val / arrSize) * height}px`;
+          }, i * 1)
+        );
       }
     }
   };
@@ -101,25 +113,30 @@ const Sort = () => {
         const b1Style = bars[bar1].style;
         const b2Style = bars[bar2].style;
         const color = type === 'highlight' ? $highlight : $primarySolid;
-        setTimeout(() => {
-          b1Style.backgroundColor = color;
-          b2Style.backgroundColor = color;
-        }, i * 1);
+        animationTimeouts.current.push(
+          setTimeout(() => {
+            b1Style.backgroundColor = color;
+            b2Style.backgroundColor = color;
+          }, i * 1)
+        );
       } else {
-        setTimeout(() => {
-          const [bar1, bar2, v1, v2] = animations[i].indices;
-          const b1Style = bars[bar1].style;
-          b1Style.height = `${(v2 / arrSize) * height}px`;
-          const b2Style = bars[bar2].style;
-          b2Style.height = `${(v1 / arrSize) * height}px`;
-        }, i * 1);
+        animationTimeouts.current.push(
+          setTimeout(() => {
+            const [bar1, bar2, v1, v2] = animations[i].indices;
+            const b1Style = bars[bar1].style;
+            b1Style.height = `${(v2 / arrSize) * height}px`;
+            const b2Style = bars[bar2].style;
+            b2Style.height = `${(v1 / arrSize) * height}px`;
+          }, i * 1)
+        );
       }
     }
   };
 
   const handleSlide = (e: React.ChangeEvent<HTMLInputElement>) => {
     setArrSize(parseInt(e.target.value));
-    _.throttle(() => randomizeArray(), 100)();
+    // _.throttle(() => randomizeArray(), 500, { trailing: true })();
+    randomizeArray();
   };
 
   useEffect(() => {
@@ -154,6 +171,7 @@ const Sort = () => {
       <button onClick={() => randomizeArray()}>Randomize Array</button>
       <button onClick={() => mergeSort()}>MergeSort</button>
       <button onClick={() => quickSort()}>Quicksort</button>
+      <button onClick={() => cancelAnimation()}>Stop Animation</button>
     </section>
   );
 };
