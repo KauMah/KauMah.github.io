@@ -48,7 +48,7 @@ const About = () => {
               I am a {calcAgeYears()} year old software engineer. I like using
               <strong> Typescript</strong>,{' '}
               <strong>React (and React Native)</strong>, and{' '}
-              <strong>Node.js</strong> to build performant and aethetically
+              <strong>Node.js</strong> to build performant and aesthetically
               pleasing applications.
             </p>
             <h4>My strengths:</h4>
@@ -57,7 +57,9 @@ const About = () => {
                 Learning concepts and languages quickly by reading or consulting
                 the appropriate authority (human or online knowledge base)
               </li>
-              <li>Communicating directly and effectively</li>
+              <li>
+                Communicating directly and effectively with my team and manager
+              </li>
               <li>
                 Applying business requirements to engineering work and being
                 able to relay information to both technical and non-technical
@@ -66,8 +68,11 @@ const About = () => {
             </ul>
             <h4>My interests:</h4>
             <ul>
-              <li>Using the things I build to make my life easier</li>
-              <li>Playing sports and exercising + pow days</li>
+              <li>
+                Using my skills and other tools to automate or simplify my day
+                to day activities
+              </li>
+              <li>Soccer, football, baseball, exercising, and pow days</li>
               <li>Producing music and playing the piano and guitar</li>
               <li>
                 Reading books and staying up to date on latest news in tech,

@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation';
 import { $white } from '../../assets/colors';
 
 const styles = {
@@ -13,21 +14,38 @@ const styles = {
     color: $white,
     fontSize: 'calc(1em + 3.5vw)',
   },
-  boldital: {
+  change: {
     fontWeight: 'bold' as const,
     fontStyle: 'italic',
   },
 };
 
 const IntroSection = () => {
+  const vals = [
+    'Kaushik',
+    1000,
+    'an Engineer',
+    1000,
+    'a Full Stack Developer',
+    1000,
+    'a Student',
+    1000,
+    'a Reader',
+    1000,
+  ];
+
   return (
     <section id="landing" style={styles.sect}>
       <div
         className="container h-100 d-flex justify-content-center align-items-center"
         style={styles.textContainer}>
         <h1 style={styles.mainText}>
-          {/* Kaushik: <span css={styles.boldital}>n.</span> Full Stack Developer */}
-          Hi, I'm Kaushik
+          Hi, I'm{' '}
+          <TypeAnimation
+            sequence={vals}
+            style={styles.change}
+            repeat={Infinity}
+          />{' '}
         </h1>
       </div>
     </section>
