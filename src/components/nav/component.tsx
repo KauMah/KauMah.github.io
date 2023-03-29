@@ -19,7 +19,7 @@ const styles = {
         'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 15%, rgba(255,255,255,.3) 100%)',
       backdropFilter: 'blur(2px)',
       WebkitBackdropFilter: 'blur(2px)',
-      height: '72px',
+      // height: '72px', // never uncomment this line because it breaks the mobile hamburger menu
       mask: 'linear-gradient(black 85%, transparent)',
       padding: '12px 5px',
       position: 'fixed' as 'fixed',

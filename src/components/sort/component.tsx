@@ -43,7 +43,7 @@ const styles = {
   },
   button: css({
     padding: '5px',
-    margin: '0 5px',
+    margin: '5px 5px',
     borderRadius: '5px',
     backgroundColor: $primarySolid,
     color: $white,
@@ -227,30 +227,44 @@ const Sort = () => {
   return (
     <section id="sort" style={styles.section}>
       <h2 style={styles.title}>Sorting Visualizer</h2>
-      <div style={styles.sortOps}>
-        <div style={styles.rangeContainer}>
-          <label htmlFor="numCols">Array Size</label>
-          <input
-            name="numCols"
-            type="range"
-            min={1}
-            max={maxCols}
-            value={arrSize}
-            css={styles.range}
-            onChange={handleSlide}></input>
+      <div className="container">
+        <div style={styles.sortOps} className="row">
+          <div className="col-8 col-sm-2" style={styles.rangeContainer}>
+            <label htmlFor="numCols">Array Size</label>
+            <input
+              name="numCols"
+              type="range"
+              min={1}
+              max={maxCols}
+              value={arrSize}
+              css={styles.range}
+              onChange={handleSlide}></input>
+          </div>
+          <button
+            className="col-8 col-sm-2"
+            css={styles.button}
+            onClick={() => randomizeArray()}>
+            Randomize Array
+          </button>
+          <button
+            className="col-8 col-sm-2"
+            css={styles.button}
+            onClick={() => mergeSort()}>
+            MergeSort
+          </button>
+          <button
+            className="col-8 col-sm-2"
+            css={styles.button}
+            onClick={() => quickSort()}>
+            Quicksort
+          </button>
+          <button
+            className="col-8 col-sm-2"
+            css={styles.button}
+            onClick={() => cancelAnimation()}>
+            Stop Animation
+          </button>
         </div>
-        <button css={styles.button} onClick={() => randomizeArray()}>
-          Randomize Array
-        </button>
-        <button css={styles.button} onClick={() => mergeSort()}>
-          MergeSort
-        </button>
-        <button css={styles.button} onClick={() => quickSort()}>
-          Quicksort
-        </button>
-        <button css={styles.button} onClick={() => cancelAnimation()}>
-          Stop Animation
-        </button>
       </div>
       <div ref={containerRef} style={styles.container}>
         {array &&
