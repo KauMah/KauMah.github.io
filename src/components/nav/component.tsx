@@ -1,28 +1,31 @@
+import { useEffect, useState } from 'react';
 import {
   $black,
-  $navButtonActive,
   $primary,
+  $primaryTransparent,
   $white,
 } from '../../assets/colors';
 
 import { css } from '@emotion/react';
 import _ from 'lodash';
-import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { ScrollLink } from 'react-scroll';
 
 const styles = {
-  bar: css({
-    background:
-      'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 15%, rgba(255,255,255,.3) 100%)',
-    backdropFilter: 'blur(2px)',
-    WebkitBackdropFilter: 'blur(2px)',
-    // height: '72px',
-    mask: 'linear-gradient(black 85%, transparent)',
-    padding: '12px 5px',
-    position: 'fixed' as 'fixed',
-  }),
+  bar: (scrolling: boolean) =>
+    css({
+      background:
+        'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 15%, rgba(255,255,255,.3) 100%)',
+      backdropFilter: 'blur(2px)',
+      WebkitBackdropFilter: 'blur(2px)',
+      height: '72px',
+      mask: 'linear-gradient(black 85%, transparent)',
+      padding: '12px 5px',
+      position: 'fixed' as 'fixed',
+      transition: 'top .3s ease-in-out',
+      top: scrolling ? '-72px' : '0px',
+    }),
   brand: css({
     color: $black,
     textDecoration: 'none',
@@ -52,7 +55,7 @@ const styles = {
     transition: 'background-color 0.3s, color .3s',
     border: '1px solid rgba(0,0,0,0)',
     '&:hover': {
-      backgroundColor: $navButtonActive,
+      backgroundColor: $primaryTransparent,
       border: '1px solid rgba(50,50,50,0.3)',
       color: $white,
     },
@@ -76,16 +79,16 @@ const navButtons: Array<buttonTemp> = [
     href: 'landing',
   },
   {
-    name: 'About',
-    href: 'about',
+    name: 'Projects',
+    href: 'projects',
   },
   {
     name: 'Skills',
     href: 'skills',
   },
   {
-    name: 'Projects',
-    href: 'projects',
+    name: 'About',
+    href: 'about',
   },
   {
     name: 'Contact',
@@ -101,6 +104,28 @@ const CustomLink = ScrollLink(Link);
 
 const CustomNav = () => {
   const [condensed, setCondensed] = useState(false);
+  const [show, setShow] = useState(true);
+  const [scrollingDown, setScrollingDown] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY;
+      if (
+        direction !== scrollingDown &&
+        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
+      ) {
+        setScrollingDown(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener('scroll', updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
+  }, [scrollingDown]);
   return (
     <Navbar
       className="fixed-top"
@@ -111,7 +136,7 @@ const CustomNav = () => {
           : setCondensed(!condensed);
       }}
       expand="md"
-      css={styles.bar}>
+      css={styles.bar(scrollingDown)}>
       <Navbar.Brand>
         <a href={'/#'} style={styles.link}>
           <h4 key="brand" css={styles.brand}>

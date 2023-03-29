@@ -18,6 +18,7 @@ const styles = {
   text: {
     padding: '20px 20px',
     textAlign: 'left' as 'left',
+    fontSize: '1.1em',
   },
 };
 
@@ -44,28 +45,35 @@ const About = () => {
           </div>
           <div className="col-md-6 col-sm-12" style={styles.text}>
             <p>
-              I am a {calcAgeYears()} year old software engineer. I like
-              learning new things, skiing, chess, reading, making music, and
-              solving problems. My motivation comes stems my desire to ensure
-              that I make something amazing of my 20's and I want to live up to
-              the incredible stories I've heard from all the people who have
-              mentored me.
+              I am a {calcAgeYears()} year old software engineer. I like using
+              <strong> Typescript</strong>,{' '}
+              <strong>React (and React Native)</strong>, and{' '}
+              <strong>Node.js</strong> to build performant and aethetically
+              pleasing applications.
             </p>
-            <p>
-              I operate on 3 major pillars: Thoughtfulness, Inquisivity, and
-              Playfulness. It is very important to me that my actions do not
-              adversely affect those around me. This can range from the words I
-              choose to omit form my vernacular to the way I drive on a highway
-              to minimize my impact on traffic. Curiosity has driven me to learn
-              all that I have in my life, and I recognize how valuable it has
-              been in motivating me to learn new things. Finally, life would be
-              unbelievably bland if everything was serious, so I think it's
-              important to have fun, even in serious contexts. If possible, I
-              choose to have fun even through the most mundane aspects of my
-              life. If there are things that have to be done, it might as well
-              be fun to do them. The hope is that these principles help me
-              acheive my goals in a way that is sustainable and constructive.
-            </p>
+            <h4>My strengths:</h4>
+            <ul>
+              <li>
+                Learning concepts and languages quickly by reading or consulting
+                the appropriate authority (human or online knowledge base)
+              </li>
+              <li>Communicating directly and effectively</li>
+              <li>
+                Applying business requirements to engineering work and being
+                able to relay information to both technical and non-technical
+                people
+              </li>
+            </ul>
+            <h4>My interests:</h4>
+            <ul>
+              <li>Using the things I build to make my life easier</li>
+              <li>Playing sports and exercising + pow days</li>
+              <li>Producing music and playing the piano and guitar</li>
+              <li>
+                Reading books and staying up to date on latest news in tech,
+                sports, and social issues
+              </li>
+            </ul>
           </div>
         </div>
       </div>

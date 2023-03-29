@@ -1,16 +1,19 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   $highlight,
+  $primaryHighlight,
   $primarySolid,
+  $primaryTransparent,
   $secondary,
   $white,
 } from '../../assets/colors';
 import {
-  QuicksortAnimation,
   createMergeSortAnimations,
+  QuicksortAnimation,
   quickSortAnimations,
 } from './sortingAlgos';
-import { useEffect, useRef, useState } from 'react';
 
+import { css } from '@emotion/react';
 import { useContainerDimensions } from '../../hooks/useResize';
 
 const styles = {
@@ -37,6 +40,77 @@ const styles = {
   },
   count: {
     display: 'inline-block',
+  },
+  button: css({
+    padding: '5px',
+    margin: '0 5px',
+    borderRadius: '5px',
+    backgroundColor: $primarySolid,
+    color: $white,
+    fontWeight: 'bold',
+    border: 'none',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      backgroundColor: $primaryTransparent,
+      color: $primaryHighlight,
+    },
+  }),
+  rangeContainer: {
+    display: 'flex' as const,
+    flexDirection: 'column' as const,
+    fontWeight: 'bold' as const,
+  },
+  range: css({
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
+    '-webkit-appearance': 'none',
+    margin: '10px 0',
+    appearance: 'none',
+    '&::-webkit-slider-runnable-track': {
+      background: $primarySolid,
+      borderRadius: 5,
+      height: 10,
+    },
+    '&::-moz-range-track': {
+      background: $primarySolid,
+      borderRadius: 5,
+      height: 10,
+    },
+    '&::-webkit-slider-thumb': {
+      '-webkit-appearance': 'none',
+      backgroundColor: $primaryHighlight,
+      height: 20,
+      width: 20,
+      marginTop: -5,
+      borderRadius: 10,
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        backgroundColor: $highlight,
+        height: 25,
+        width: 25,
+        marginTop: -7,
+      },
+    },
+    '&::-moz-range-thumb': {
+      '-webkit-appearance': 'none',
+      backgroundColor: $primaryHighlight,
+      height: 20,
+      width: 20,
+      marginTop: -5,
+      borderRadius: 10,
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        backgroundColor: $highlight,
+        height: 25,
+        width: 25,
+        marginTop: -7,
+      },
+    },
+  }),
+  sortOps: {
+    display: 'flex' as const,
+    flexDirection: 'row' as const,
+    justifyContent: 'center',
   },
 };
 
@@ -153,6 +227,31 @@ const Sort = () => {
   return (
     <section id="sort" style={styles.section}>
       <h2 style={styles.title}>Sorting Visualizer</h2>
+      <div style={styles.sortOps}>
+        <div style={styles.rangeContainer}>
+          <label htmlFor="numCols">Array Size</label>
+          <input
+            name="numCols"
+            type="range"
+            min={1}
+            max={maxCols}
+            value={arrSize}
+            css={styles.range}
+            onChange={handleSlide}></input>
+        </div>
+        <button css={styles.button} onClick={() => randomizeArray()}>
+          Randomize Array
+        </button>
+        <button css={styles.button} onClick={() => mergeSort()}>
+          MergeSort
+        </button>
+        <button css={styles.button} onClick={() => quickSort()}>
+          Quicksort
+        </button>
+        <button css={styles.button} onClick={() => cancelAnimation()}>
+          Stop Animation
+        </button>
+      </div>
       <div ref={containerRef} style={styles.container}>
         {array &&
           array.length !== 0 &&
@@ -162,21 +261,11 @@ const Sort = () => {
               key={`bar-${index}`}
               style={{
                 ...styles.bar,
-                width: `${width / arrSize - 1}px`,
+                width: `${Math.floor(width / arrSize - 1)}px`,
                 height: `${(num / array.length) * height}px`,
               }}></div>
           ))}
       </div>
-      <input
-        type="range"
-        min={1}
-        max={maxCols}
-        value={arrSize}
-        onChange={handleSlide}></input>
-      <button onClick={() => randomizeArray()}>Randomize Array</button>
-      <button onClick={() => mergeSort()}>MergeSort</button>
-      <button onClick={() => quickSort()}>Quicksort</button>
-      <button onClick={() => cancelAnimation()}>Stop Animation</button>
     </section>
   );
 };

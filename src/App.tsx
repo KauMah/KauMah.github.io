@@ -30,10 +30,10 @@ class App extends Component {
       <div className="App">
         <CustomNav />
         <IntroSection />
-        <About />
-        <Skills />
         <Projects />
         <Sort />
+        <Skills />
+        <About />
         <Contact />
       </div>
     );
