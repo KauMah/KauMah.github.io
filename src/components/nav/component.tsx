@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   $black,
   $primary,
@@ -65,7 +65,7 @@ const styles = {
   },
   buttonWrapperCondensed: {
     display: 'inline-block',
-    margin: '8px 0',
+    margin: '8px auto',
   },
 };
 interface buttonTemp {
@@ -106,6 +106,8 @@ const CustomNav = () => {
   const [condensed, setCondensed] = useState(false);
   const [show, setShow] = useState(true);
   const [scrollingDown, setScrollingDown] = useState(false);
+  const [opened, setOpened] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -113,6 +115,9 @@ const CustomNav = () => {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY;
+      if (opened && buttonRef && buttonRef.current) {
+        buttonRef.current.click();
+      }
       if (
         direction !== scrollingDown &&
         (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
@@ -125,7 +130,7 @@ const CustomNav = () => {
     return () => {
       window.removeEventListener('scroll', updateScrollDirection); // clean up
     };
-  }, [scrollingDown]);
+  }, [scrollingDown, opened]);
   return (
     <Navbar
       className="fixed-top"
@@ -147,6 +152,8 @@ const CustomNav = () => {
       <Navbar.Toggle
         aria-controls="responsive-navbar-nav"
         style={styles.navBox}
+        ref={buttonRef}
+        onClick={() => setOpened((last) => !last)}
       />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav

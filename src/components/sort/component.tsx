@@ -63,7 +63,7 @@ const styles = {
   range: css({
     backgroundColor: 'transparent',
     cursor: 'pointer',
-    '-webkit-appearance': 'none',
+    webkitAppearance: 'none',
     margin: '10px 0',
     appearance: 'none',
     '&::-webkit-slider-runnable-track': {
@@ -77,7 +77,7 @@ const styles = {
       height: 10,
     },
     '&::-webkit-slider-thumb': {
-      '-webkit-appearance': 'none',
+      webkitAppearance: 'none',
       backgroundColor: $primaryHighlight,
       height: 20,
       width: 20,
@@ -92,7 +92,7 @@ const styles = {
       },
     },
     '&::-moz-range-thumb': {
-      '-webkit-appearance': 'none',
+      webkitAppearance: 'none',
       backgroundColor: $primaryHighlight,
       height: 20,
       width: 20,
