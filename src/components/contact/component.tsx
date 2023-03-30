@@ -17,6 +17,9 @@ const styles = {
     textAlign: 'center' as 'center',
     fontSize: '40px',
   },
+  subtitle: {
+    fontSize: '.3em',
+  },
   spacer: {
     justifyContent: 'center',
   },
@@ -56,7 +59,7 @@ const Contact = () => {
   return (
     <section id="contact">
       <div style={styles.container} className="container">
-        <h3>GET IN TOUCH!</h3>
+        <h2>GET IN TOUCH!</h2>
         <hr />
         <div className="" style={styles.spacer}>
           <a
@@ -100,6 +103,7 @@ const Contact = () => {
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </a>
         </div>
+        <p style={styles.subtitle}>Made with ♥️ by Kaushik</p>
       </div>
     </section>
   );

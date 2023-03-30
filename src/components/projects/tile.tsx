@@ -50,7 +50,16 @@ const styles = {
   }),
 };
 
-function Tile({ title, body, url, imageUrl, liveUrl }: Project) {
+function Tile({
+  title,
+  shortBody,
+  body,
+  url,
+  imageUrl,
+  liveUrl,
+  tags,
+  active,
+}: Project) {
   return (
     <div className="col-12 col-lg-6">
       <div style={styles.container} className="row">

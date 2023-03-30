@@ -1,21 +1,87 @@
 [
   {
-    "title": "kaumah.github.io",
-    "body": "You are already here! This is my portfolio which started off as raw HTML and CSS, was converted to React using create-react-app in 2020, and has recently been migrated to Vite. It is meant not only to showcase my work but also to run experiments",
-    "url": "https://github.com/KauMah/KauMah.github.io",
-    "imageUrl": "https://imgur.com/QnqUMpc.png"
+    "active": true,
+    "time": "2023",
+    "title": "Github Analyzer",
+    "shortBody": "Github only shows minimal analytics on profiles - the infamous green squares. I want to learn more about a user's development habits by getting more granular data about their commits by parsing all of their commits. This is accomplished by concurrently parsing all of their commits from the git log found in their public repos. ",
+    "body": "The main goal of this project was to explore Rust while learning something new about people's git and development habits. The program takes a user and any names/email identifiers that they may have cmomited as and returns a CSV. Each row in the CSV contains information about a single commit, including the commit hash, timestamp, lines addded, and lines removed. Instead of using the Github API, which is limited in terms of scraping granular data, I opted to create a job queue that uses uses a threadpool to clone, scrape, and delete each public repository that a user has committed to. The next step for this project is to potentially run a clustering algorithm on their commits and provide some sort of analysis of the developer's commit frequency and times of day when they are the most \"productive\". ",
+    "url": "https://github.com/KauMah/GithubAnalyzer",
+    "imageUrl": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
+    "tags": []
   },
   {
-    "title": "Youtube Uploader Clone",
-    "body": "This is a barebones YouTube Uploading client that I made in order to get familiar with implementing OAuth2 along with Google sign in. It allows a user to create, view, update, and delete basic attributes of a video. UPDATE: I believe this is broken now, but I had some fun writing backend code to hack a solution together for managing video access control.",
+    "active": true,
+    "time": "2023",
+    "title": "Shuttle Tracker App",
+    "shortBody": "A web application used to track campus shuttle buses, display wait times, routes, and stops on a map - In Progress: 2023",
+    "body": "This project is a test of my ability to properly build a web app with several features. I led a small team to build this fully in Typescript using MongoDB, Express, and React for a Software Engineering Course. It implements user authentication with password salting and hashing, strict typing of API requests, and rudimentary role based access. I wanted to take what I had learned from past projects and prioritize security, performance, developer friendliness, and robustness. Some notable libraries used were Express, Mongoose, MapboxGL, Bootstrap, Emotion CSS, and Zod.",
+    "url": "https://github.com/KauMah/ShuttleTracker",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/53c51f61e4b02bb571b7ca82/1424996778828-01E8ZFH2CCALDD0MNXX6/ke17ZwdGBToddI8pDm48kP06O0_IHyRXSOOiqwgWaApZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEsL0EX72Q6S7TgfQYQBQpkz5xM6Qt8VXd_xJGg_ziCFib8BodarTVrzIWCp72ioWw/Coming-Soon-grey-square.png",
+    "tags": [
+      "React.js",
+      "Typescript",
+      "HTML",
+      "CSS",
+      "MongoDB",
+      "Typegoose",
+      "JWT",
+      "Mapbox",
+      "Zod",
+      "Node.js",
+      "Emotion CSS",
+      "Express",
+      "Bootstrap",
+      "HTTPS"
+    ]
+  },
+  {
+    "active": false,
+    "time": "2020-2021",
+    "title": "Picstop",
+    "shortBody": "A photo sharing application, combining functionaltiies of Instagram and Yik Yak. Built with Typescript, Node.js, Express, and React Native",
+    "body": "This application was built in collaboration with a team of students at Northeastern University for the Husky Startup Challenge. It is meant to share photos tagged with a location and give users an experience that draws from aspects of both Yik Yak and Instagram. Pictures are uploaded to Amazon S3 using presigned URLs directly from the client device as well to reduce load on the backend server, also deployed using EC2 (with load balancing). During this project, I was mainly responsible for the React Native front end, but I also did a great deal of pair programming to create many API endpoints. I built most of the major features in the front end, including an interface with tabbed navigation, CRUD operations for a photo post, comments, likes, and follow requests. I also created a rich map using Mapbox which used MongoDB geospatial queries to find popular posts near the user. Apart from the recommendation system, the other major feature I developed was the integration with the Apple Push Notification Server, which I learned how to use after reading through Apple's developer documentation. This project is no longer active.",
+    "url": "https://github.com/KauMah/picstop-fork",
+    "liveUrl": "https://github.com/Picstop",
+    "imageUrl": "https://avatars.githubusercontent.com/u/75647475?s=200&v=4",
+    "tags": [
+      "React Native",
+      "Node.js",
+      "Typescript",
+      "MongoDB",
+      "iOS",
+      "APNS",
+      "Mapbox",
+      "AWS S3",
+      "EC2"
+    ]
+  },
+  {
+    "active": false,
+    "time": "2020",
+    "title": "YouTube Uploader Clone",
+    "shortBody": "A YouTube Uploader client for uploading and managing access to videos: 2020",
+    "body": "This project utilized the YouTube API and was my first major personal foray into creating a system. In the interest of pure functionality, I simply implemented Google OAUTH2 and directly made API requests using a JWT access token. However, I learned a great deal about how to manage large file uploads and using OAUTH2 to secure my application. Looking back, I think I could have made the application more secure by using HTTPS to prevent my access token from being exploited.",
     "url": "https://github.com/KauMah/yt-upload",
     "imageUrl": "https://imgur.com/ENOQ8Pf.png",
-    "liveUrl": "http://yt-upload.netlify.app"
+    "tags": [
+      "React.js",
+      "Typescript",
+      "HTML",
+      "CSS",
+      "OAUTH2",
+      "YouTube",
+      "Google Cloud",
+      "JWT"
+    ]
   },
   {
-    "title": "Shuttle Tracker App",
-    "body": "In Progress - An app that is used to model the location of a shuttle service. Built fully in Typescript using MongoDB, Express, and React. It implements user authentication with password salting and hashing, strict typing of API requests, and rudimentary role based access.",
-    "url": "https://github.com/KauMah/ShuttleTracker",
-    "imageUrl": "https://images.squarespace-cdn.com/content/v1/53c51f61e4b02bb571b7ca82/1424996778828-01E8ZFH2CCALDD0MNXX6/ke17ZwdGBToddI8pDm48kP06O0_IHyRXSOOiqwgWaApZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEsL0EX72Q6S7TgfQYQBQpkz5xM6Qt8VXd_xJGg_ziCFib8BodarTVrzIWCp72ioWw/Coming-Soon-grey-square.png"
+    "active": true,
+    "time": "2016 - ",
+    "title": "kaumah.github.io",
+    "shortBody": "My Portfolio Website: 2016-present",
+    "body": "You are already here! This is my portfolio which started off as raw HTML and CSS, was converted to React using create-react-app in 2020, and has recently been migrated to Vite. It is meant to showcase my previous projects and also express my personal flair and design competency.",
+    "url": "https://github.com/KauMah/KauMah.github.io",
+    "imageUrl": "https://i.imgur.com/vz40tzL.png",
+    "tags": ["React.js", "Typescript", "HTML", "Bootstrap", "Emotion CSS"]
   }
 ]

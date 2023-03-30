@@ -32,7 +32,7 @@ const About = () => {
   return (
     <section id="about" style={styles.sect}>
       <div className="container" style={styles.container}>
-        <h3>ABOUT ME</h3>
+        <h2>ABOUT ME</h2>
         <hr />
         <div className="row">
           <div className="col-md-6 col-sm-12">
