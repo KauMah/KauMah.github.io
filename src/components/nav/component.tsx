@@ -183,6 +183,7 @@ const CustomNav = () => {
               </div>
             );
           })}
+          {condensed && <div style={{ opacity: 0, height: 40 }}></div>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

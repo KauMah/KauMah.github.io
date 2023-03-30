@@ -1,4 +1,8 @@
 import {
+  faScrewdriverWrench,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
+import {
   $black,
   $primaryHighlight,
   $primaryLessTransparent,
@@ -11,6 +15,8 @@ import {
 } from '../../assets/colors';
 
 import { css } from '@emotion/react';
+import { IconLookup } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import ReactModal from 'react-modal';
 import { Project } from './component';
@@ -60,10 +66,10 @@ const styles = {
   }),
   background: {
     backgroundSize: 'contain',
-    height: '250px',
-    width: '250px',
+    height: '275px',
+    width: '275px',
     margin: '0 auto',
-    borderRadius: '5px',
+    borderRadius: '10px',
     cursor: 'pointer',
   },
   info: css({
@@ -76,16 +82,20 @@ const styles = {
     opacity: 0,
     alignItems: 'center',
     textAlign: 'center',
-    borderRadius: '5px',
+    borderRadius: '10px',
+    backdropFilter: 'blur(4px)',
     '&:hover': {
       backgroundColor: $primaryLessTransparent,
       opacity: 1,
     },
   }),
   infoText: css({
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     padding: '10px',
     color: $white,
+    margin: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
   }),
   emph: {
     color: $primarySolid,
@@ -95,17 +105,36 @@ const styles = {
   },
   modalContent: {
     display: 'flex',
-    margin: '70px auto auto auto',
+    margin: '20px auto auto auto',
     height: '80%',
-    width: '70%',
+    width: '80%',
     backgroundColor: $secondary,
     borderRadius: 10,
   },
   modalOverlay: {
-    backgroundColor: 'transparent',
+    backgroundColor: $transparent,
     backdropFilter: 'blur(4px)',
+    WebkitBackdropFilter: 'blur(4px)',
     zIndex: 3000,
   },
+  x: {
+    height: 30,
+    width: 30,
+    position: 'absolute' as const,
+    top: 20,
+    right: 20,
+    backgroundColor: $primarySolid,
+    color: $white,
+    fontSize: 20,
+    borderRadius: '5px',
+    cursor: 'pointer',
+    paddingLeft: 5,
+  },
+  modalContainer: {
+    justifyItems: 'center',
+    width: '100%',
+  },
+  modalTitle: {},
 };
 
 function Tile({
@@ -135,7 +164,15 @@ function Tile({
             <h4 css={styles.linkText}>{title}</h4>
           </div>
           <a href={url} css={styles.mainLink}>
-            View on Github
+            View on Github{' '}
+            {active && (
+              <span style={{}}>
+                <FontAwesomeIcon
+                  icon={faScrewdriverWrench as IconLookup}
+                  size="lg"
+                />
+              </span>
+            )}
           </a>
           <div
             onClick={openModal}
@@ -145,7 +182,7 @@ function Tile({
             }}>
             <div css={styles.info}>
               <p css={styles.infoText}>
-                {shortBody} <br />
+                {shortBody}
                 <strong style={styles.emph}>Click for more info!</strong>
               </p>
             </div>
@@ -160,7 +197,14 @@ function Tile({
         style={{
           overlay: styles.modalOverlay,
           content: styles.modalContent,
-        }}></ReactModal>
+        }}>
+        <div style={styles.modalContainer}>
+          <div style={styles.x} onClick={closeModal}>
+            <FontAwesomeIcon icon={faXmark as IconLookup} size="lg" />
+          </div>
+          <h3 style={styles.modalTitle}>{title}</h3>
+        </div>
+      </ReactModal>
     </div>
   );
 }

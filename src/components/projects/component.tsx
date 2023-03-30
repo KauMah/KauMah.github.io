@@ -1,4 +1,9 @@
-import { $secondary } from '../../assets/colors';
+import { $primarySolid, $secondary } from '../../assets/colors';
+
+import { css } from '@emotion/react';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import projectEntries from '../../assets/projectInfo.json';
 import Tile from './tile';
 
@@ -35,6 +40,10 @@ const Projects = () => {
       <div style={styles.container} className="container">
         <h2 style={styles.header}>PROJECTS</h2>
         <hr />
+        <div css={css({ color: $primarySolid })}>
+          <FontAwesomeIcon icon={faScrewdriverWrench as IconProp} size="lg" /> -
+          In Active Development
+        </div>
       </div>
       <div className="container-fluid">
         <div className="row">

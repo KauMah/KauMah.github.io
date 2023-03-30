@@ -58,7 +58,7 @@
   {
     "active": false,
     "time": "2020",
-    "title": "YouTube Uploader Clone",
+    "title": "YouTube Uploader",
     "shortBody": "A YouTube Uploader client for uploading and managing access to videos",
     "body": "This project utilized the YouTube API and was my first major personal foray into creating a system. In the interest of pure functionality, I simply implemented Google OAUTH2 and directly made API requests using a JWT access token. However, I learned a great deal about how to manage large file uploads and using OAUTH2 to secure my application. Looking back, I think I could have made the application more secure by using HTTPS to prevent my access token from being exploited.",
     "url": "https://github.com/KauMah/yt-upload",

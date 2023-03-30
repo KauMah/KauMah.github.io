@@ -226,7 +226,7 @@ const Sort = () => {
   }, [arrSize]);
   return (
     <section id="sort" style={styles.section}>
-      <h2 style={styles.title}>Sorting Visualizer</h2>
+      <h2 style={styles.title}>SORTING VISUALIZER</h2>
       <div className="container">
         <div style={styles.sortOps} className="row">
           <div className="col-8 col-sm-2" style={styles.rangeContainer}>
