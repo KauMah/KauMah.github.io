@@ -30,7 +30,9 @@ const IntroSection = () => {
     1000,
     'a Student',
     1000,
-    'a Reader',
+    'a Problem Solver',
+    1000,
+    'a Bookworm',
     1000,
   ];
 
