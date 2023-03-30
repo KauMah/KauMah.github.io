@@ -7,7 +7,7 @@
     "body": "The main goal of this project was to explore Rust while learning something new about people's git and development habits. The program takes a user and any names/email identifiers that they may have cmomited as and returns a CSV. Each row in the CSV contains information about a single commit, including the commit hash, timestamp, lines addded, and lines removed. Instead of using the Github API, which is limited in terms of scraping granular data, I opted to create a job queue that uses uses a threadpool to clone, scrape, and delete each public repository that a user has committed to. The next step for this project is to potentially run a clustering algorithm on their commits and provide some sort of analysis of the developer's commit frequency and times of day when they are the most \"productive\". ",
     "url": "https://github.com/KauMah/GithubAnalyzer",
     "imageUrl": "https://www.rust-lang.org/static/images/rust-logo-blk.svg",
-    "tags": []
+    "tags": ["Rust", "concurrency", "threads", "git", "API", "csv"]
   },
   {
     "active": true,
@@ -42,7 +42,7 @@
     "body": "This application was built in collaboration with a team of students at Northeastern University for the Husky Startup Challenge. It is meant to share photos tagged with a location and give users an experience that draws from aspects of both Yik Yak and Instagram. Pictures are uploaded to Amazon S3 using presigned URLs directly from the client device as well to reduce load on the backend server, also deployed using EC2 (with load balancing). During this project, I was mainly responsible for the React Native front end, but I also did a great deal of pair programming to create many API endpoints. I built most of the major features in the front end, including an interface with tabbed navigation, CRUD operations for a photo post, comments, likes, and follow requests. I also created a rich map using Mapbox which used MongoDB geospatial queries to find popular posts near the user. Apart from the recommendation system, the other major feature I developed was the integration with the Apple Push Notification Server, which I learned how to use after reading through Apple's developer documentation. This project is no longer active.",
     "url": "https://github.com/KauMah/picstop-fork",
     "liveUrl": "https://github.com/Picstop",
-    "imageUrl": "https://avatars.githubusercontent.com/u/75647475?s=200&v=4",
+    "imageUrl": "https://i.imgur.com/QjnyULK.png",
     "tags": [
       "React Native",
       "Node.js",

@@ -66,6 +66,7 @@ const styles = {
   }),
   background: {
     backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
     height: '275px',
     width: '275px',
     margin: '0 auto',
@@ -84,7 +85,6 @@ const styles = {
     opacity: 0,
     alignItems: 'center',
     textAlign: 'center',
-    // borderRadius: '10px',
     backdropFilter: 'blur(4px)',
     '&:hover': {
       backgroundColor: $primaryLessTransparent,
@@ -104,6 +104,7 @@ const styles = {
     backgroundColor: $twhite,
     borderRadius: 5,
     padding: 3,
+    marginBottom: 5,
   },
   modalContent: {
     display: 'flex',
@@ -141,6 +142,16 @@ const styles = {
   modalDiv: {
     padding: '5%',
   },
+  liveLink: css({
+    textDecoration: 'none',
+    color: $primarySolid,
+    fontWeight: 'bold',
+    fontSize: '1.2em',
+    cursor: 'pointer',
+    '&:hover': {
+      color: $primaryHighlight,
+    },
+  }),
 };
 
 function Tile({
@@ -154,6 +165,14 @@ function Tile({
   active,
 }: Project) {
   const [modalOpen, setModalOpen] = useState(false);
+  let tagString = '';
+  tags.map(
+    (tag, index) =>
+      (tagString =
+        index == tags.length - 1
+          ? tagString.concat(tag)
+          : tagString.concat(tag).concat(', '))
+  );
 
   const openModal = () => {
     setModalOpen(true);
@@ -187,10 +206,8 @@ function Tile({
               backgroundImage: `url(${imageUrl})`,
             }}>
             <div css={styles.info}>
-              <p css={styles.infoText}>
-                {shortBody}
-                <strong style={styles.emph}>Click for more info!</strong>
-              </p>
+              <p css={styles.infoText}>{shortBody}</p>
+              <strong style={styles.emph}>Click for more info!</strong>
             </div>
           </div>
         </div>
@@ -211,6 +228,12 @@ function Tile({
           <div className="container" style={styles.modalDiv}>
             <h3 style={styles.modalTitle}>{title}</h3>
             <p css={styles.modalText}>{body}</p>
+            {
+              <a href={liveUrl} css={styles.liveLink} target="_blank">
+                See more here!
+              </a>
+            }
+            <p>Tags: {tagString}</p>
           </div>
         </div>
       </ReactModal>
