@@ -69,8 +69,10 @@ const styles = {
     height: '275px',
     width: '275px',
     margin: '0 auto',
-    borderRadius: '10px',
+    borderRadius: '13px',
     cursor: 'pointer',
+    border: `solid 1px ${$primaryLessTransparent}`,
+    overflow: 'hidden',
   },
   info: css({
     display: 'flex',
@@ -82,7 +84,7 @@ const styles = {
     opacity: 0,
     alignItems: 'center',
     textAlign: 'center',
-    borderRadius: '10px',
+    // borderRadius: '10px',
     backdropFilter: 'blur(4px)',
     '&:hover': {
       backgroundColor: $primaryLessTransparent,
@@ -135,6 +137,10 @@ const styles = {
     width: '100%',
   },
   modalTitle: {},
+  modalText: css({}),
+  modalDiv: {
+    padding: '5%',
+  },
 };
 
 function Tile({
@@ -163,7 +169,7 @@ function Tile({
           <div>
             <h4 css={styles.linkText}>{title}</h4>
           </div>
-          <a href={url} css={styles.mainLink}>
+          <a href={url} css={styles.mainLink} target="_blank">
             View on Github{' '}
             {active && (
               <span style={{}}>
@@ -202,7 +208,10 @@ function Tile({
           <div style={styles.x} onClick={closeModal}>
             <FontAwesomeIcon icon={faXmark as IconLookup} size="lg" />
           </div>
-          <h3 style={styles.modalTitle}>{title}</h3>
+          <div className="container" style={styles.modalDiv}>
+            <h3 style={styles.modalTitle}>{title}</h3>
+            <p css={styles.modalText}>{body}</p>
+          </div>
         </div>
       </ReactModal>
     </div>

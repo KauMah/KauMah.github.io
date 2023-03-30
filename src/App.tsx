@@ -3,6 +3,7 @@ import './App.css';
 import { Events, scrollSpy } from 'react-scroll';
 
 import { Component } from 'react';
+import ReactModal from 'react-modal';
 import About from './components/about/';
 import Contact from './components/contact/';
 import IntroSection from './components/landing/';
@@ -11,6 +12,7 @@ import Projects from './components/projects';
 import Skills from './components/skills';
 import Sort from './components/sort';
 
+ReactModal.setAppElement('#root');
 class App extends Component {
   componentDidMount() {
     Events.scrollEvent.register('begin', function (to, elements) {

@@ -67,6 +67,7 @@ const Contact = () => {
             href="https://github.com/KauMah"
             css={[styles.icon, styles.github]}
             className="col-sm-1"
+            target="_blank"
             key="github-button">
             <FontAwesomeIcon icon={faGithub} size="lg" />
           </a>
@@ -75,6 +76,7 @@ const Contact = () => {
             href="https://www.linkedin.com/in/kaushikmahadevan/"
             css={[styles.icon, styles.linkedin]}
             className="col-sm-1"
+            target="_blank"
             key="linkedin-button">
             <FontAwesomeIcon icon={faLinkedin} size="lg" />
           </a>
@@ -83,6 +85,7 @@ const Contact = () => {
             href="https://www.youtube.com/channel/UCZEyX114PjTP_r4Cku1oJaQ"
             css={[styles.icon, styles.youtube]}
             className="col-sm-1"
+            target="_blank"
             key="youtube-button">
             <FontAwesomeIcon icon={faYoutube} size="lg" />
           </a>
@@ -91,6 +94,7 @@ const Contact = () => {
             href="https://www.instagram.com/kaushik_m_/"
             css={[styles.icon, styles.instagram]}
             className="col-sm-1"
+            target="_blank"
             key="instagram-button">
             <FontAwesomeIcon icon={faInstagram} size="lg" />
           </a>
@@ -99,6 +103,7 @@ const Contact = () => {
             href="https://twitter.com/couch_chick"
             css={[styles.icon, styles.twitter]}
             className="col-sm-1"
+            target="_blank"
             key="twitter-button">
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </a>

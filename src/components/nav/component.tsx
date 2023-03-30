@@ -174,7 +174,6 @@ const CustomNav = () => {
                   smooth="easeInOutQuart"
                   duration={100}
                   activeClass="active"
-                  offset={-50}
                   css={styles.navButton}
                   className="p-2 justify-content-start"
                   to={button.href}>
