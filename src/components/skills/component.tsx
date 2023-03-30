@@ -1,5 +1,7 @@
+import { $primarySolid, $twhite, $white } from '../../assets/colors';
+
+import { css } from '@emotion/react';
 import { Parallax } from 'react-parallax';
-import { $white } from '../../assets/colors';
 import bg from '../../assets/img/bg.jpg';
 import Progress from './progress';
 
@@ -16,6 +18,14 @@ const styles = {
   centered: {
     textAlign: 'center' as 'center',
   },
+  subtitle: css({
+    color: $primarySolid,
+    backgroundColor: $twhite,
+    width: 'initial',
+    margin: '0 auto',
+    borderRadius: 5,
+    padding: '5px',
+  }),
 };
 
 const skills: ProgressProps[] = [
@@ -150,9 +160,11 @@ const Skills = () => {
           </p>
           <hr style={{ borderColor: $white }} />
           <div className="row">
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-lg-6 col-xl-4 ">
               <div className="row">
-                <h4 className="col-12">Languages</h4>
+                <h3 css={styles.subtitle} className="col-12">
+                  Languages
+                </h3>
                 {languages.map((skill) => (
                   <Progress
                     title={skill.title}
@@ -162,9 +174,11 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-lg-6 col-xl-4 ">
               <div className="row">
-                <h4 className="col-12">Frameworks/Paradigms/Concepts</h4>
+                <h3 css={styles.subtitle} className="col-12">
+                  Paradigms/Concepts
+                </h3>
                 {frameworks.map((skill) => (
                   <Progress
                     title={skill.title}
@@ -174,9 +188,11 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-lg-6 col-xl-4 ">
               <div className="row">
-                <h4 className="col-12">Tools</h4>
+                <h3 css={styles.subtitle} className="col-12">
+                  Tools
+                </h3>
                 {tools.map((skill) => (
                   <Progress
                     title={skill.title}

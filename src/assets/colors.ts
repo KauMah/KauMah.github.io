@@ -1,8 +1,11 @@
 export const $black = '#000';
 export const $white = '#FFF';
+export const $twhite = 'rgba(255,255,255, 0.8)';
 export const $primary = 'rgba(18, 69, 66, 0)';
 export const $primarySolid = 'rgba(18, 69, 66, .8)';
 export const $secondary = '#EDEDED';
 export const $primaryTransparent = 'rgba(18, 69, 66, 0.4)';
+export const $primaryLessTransparent = 'rgba(18, 69, 66, 0.7)';
 export const $primaryHighlight = '#0c575f';
 export const $highlight = 'rgb(116, 246, 222)';
+export const $transparent = 'rgba(0,0,0,0)';

@@ -22,17 +22,17 @@ const styles = {
 
 const IntroSection = () => {
   const vals = [
-    'Kaushik',
+    'Kaushik...',
     1000,
-    'an Engineer',
+    'an Engineer...',
     1000,
-    'a Full Stack Developer',
+    'a Full Stack Developer...',
     1000,
-    'a Student',
+    'a Student...',
     1000,
-    'a Problem Solver',
+    'a Problem Solver...',
     1000,
-    'a Bookworm',
+    'a Bookworm...',
     1000,
   ];
 

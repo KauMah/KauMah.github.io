@@ -1,3 +1,5 @@
+import './App.css';
+
 import { Events, scrollSpy } from 'react-scroll';
 
 import { Component } from 'react';

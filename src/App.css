@@ -1,0 +1,15 @@
+.ReactModal__Overlay {
+  backdrop-filter: blur(0px);
+  opacity: 0;
+  transition: backdrop-filter 0.25s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  backdrop-filter: blur(7px);
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  backdrop-filter: blur(0px);
+  opacity: 0;
+}
