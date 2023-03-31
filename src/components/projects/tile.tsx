@@ -152,10 +152,18 @@ const styles = {
       color: $primaryHighlight,
     },
   }),
+  modalImg: {
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    minHeight: '300px',
+    margin: '10px 0',
+  },
 };
 
 function Tile({
   title,
+  time,
   shortBody,
   body,
   url,
@@ -227,13 +235,24 @@ function Tile({
           </div>
           <div className="container" style={styles.modalDiv}>
             <h3 style={styles.modalTitle}>{title}</h3>
-            <p css={styles.modalText}>{body}</p>
-            {
-              <a href={liveUrl} css={styles.liveLink} target="_blank">
-                See more here!
-              </a>
-            }
-            <p>Tags: {tagString}</p>
+            <h5>{time}</h5>
+            <div className="row">
+              <div
+                className="col-12 col-lg-6"
+                style={{
+                  ...styles.modalImg,
+                  backgroundImage: `url(${imageUrl})`,
+                }}></div>
+              <div className="col-12 col-lg-6">
+                <p css={styles.modalText}>{body}</p>
+                {
+                  <a href={liveUrl} css={styles.liveLink} target="_blank">
+                    See more here!
+                  </a>
+                }
+                <p>Tags: {tagString}</p>
+              </div>
+            </div>
           </div>
         </div>
       </ReactModal>

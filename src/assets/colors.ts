@@ -9,3 +9,5 @@ export const $primaryLessTransparent = 'rgba(18, 69, 66, 0.7)';
 export const $primaryHighlight = '#0c575f';
 export const $highlight = 'rgb(116, 246, 222)';
 export const $transparent = 'rgba(0,0,0,0)';
+export const blah = 'rgba(12,87,95,1)';
+export const otherblah = 'rgba(93,123,125,1) ';

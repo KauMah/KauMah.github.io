@@ -23,6 +23,7 @@ const styles = {
 
 export interface Project {
   title: string;
+  time: string;
   shortBody: string;
   body: string;
   url: string;
@@ -51,6 +52,7 @@ const Projects = () => {
             <Tile
               key={`project${index}`}
               title={project.title}
+              time={project.time}
               shortBody={project.shortBody}
               body={project.body}
               url={project.url}
