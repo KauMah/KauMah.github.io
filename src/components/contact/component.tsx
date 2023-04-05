@@ -100,7 +100,7 @@ const Contact = () => {
           </a>
           <a
             title="Twitter"
-            href="https://twitter.com/couch_chick"
+            href="https://twitter.com/kshkmas"
             css={[styles.icon, styles.twitter]}
             className="col-sm-1"
             target="_blank"
