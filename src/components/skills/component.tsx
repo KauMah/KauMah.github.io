@@ -155,8 +155,6 @@ const Skills = () => {
             either in my <strong>professional experience</strong>,{' '}
             <strong>personal projects</strong>, or
             <strong> university classes</strong>
-            <br /> These measures are meant to show my relative strength in each
-            of these categories, and are not meant to be an absolute measure
           </p>
           <hr style={{ borderColor: $white }} />
           <div className="row">
